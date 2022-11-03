@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SSVerticalPanorama
+
+  Created by Purvesh Dodiya on 03/11/22.
+  Copyright © 2022 Simform Solutions Pvt. All rights reserved.
+*/
+
+"camera" = "Camera";
+"cameraPermissionMessage" = "Camera access is absolutely necessary to capture vertical image";
+"openSetting" = "Open Setting";
+"close" = "Close";
