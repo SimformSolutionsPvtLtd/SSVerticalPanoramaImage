@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */; };
+		AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */; };
+		AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB7D8E7E193E92C30059EE63 /* stitching.cpp */; };
+		AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A87193E8E830018B9EC /* AppDelegate.swift */; };
+		AB896A8A193E8E830018B9EC /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB896A89193E8E830018B9EC /* PreviewController.swift */; };
+		AB896A8D193E8E830018B9EC /* SSStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8B193E8E830018B9EC /* SSStoryboard.storyboard */; };
+		AB896A8F193E8E830018B9EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB896A8E193E8E830018B9EC /* Images.xcassets */; };
+		ABAA668D1BD420BE00BD6A45 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */; };
+		E60B4E5928E1B48C0072FD39 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4E5828E1B48C0072FD39 /* ImageViewExtension.swift */; };
+		E61132B128FFF9B700736A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E61132B028FFF9B700736A5A /* Main.storyboard */; };
+		E61132B328FFFAD300736A5A /* SSVerticalPanorama.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61132B228FFFAD300736A5A /* SSVerticalPanorama.swift */; };
+		E61C57B328FEC7280093F4ED /* Enumaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C57B228FEC7280093F4ED /* Enumaration.swift */; };
+		E61C57B728FFEDEA0093F4ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61C57B628FFEDEA0093F4ED /* ViewController.swift */; };
+		E65E4EA128F6EABC00ED1E12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E65E4EA028F6EABC00ED1E12 /* LaunchScreen.storyboard */; };
+		E674068128DC6BAA00D0A12D /* SSVerticalPanoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E674068028DC6BAA00D0A12D /* SSVerticalPanoController.swift */; };
+		E6B565F528E2EC4D00CFC699 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B565F428E2EC4D00CFC699 /* Constants.swift */; };
+		E6FBF35E291389EF00C576C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6FBF35D291389EF00C576C1 /* Localizable.strings */; };
+		F0E5A98C292B26E2CAAA8D7D /* Pods_SSVerticalPanorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F1904BC8247496FFB99B6E /* Pods_SSVerticalPanorama.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		98F1904BC8247496FFB99B6E /* Pods_SSVerticalPanorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSVerticalPanorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A43789EC0B5D2E48DA528636 /* Pods-SSVerticalPanorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSVerticalPanorama.release.xcconfig"; path = "Target Support Files/Pods-SSVerticalPanorama/Pods-SSVerticalPanorama.release.xcconfig"; sourceTree = "<group>"; };
+		AB6D1AEE193F9B6600F8B0F5 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftStitch-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		AB7D8E7B193E92B80059EE63 /* CVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVWrapper.h; sourceTree = "<group>"; };
+		AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CVWrapper.mm; sourceTree = "<group>"; };
+		AB7D8E7E193E92C30059EE63 /* stitching.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stitching.cpp; sourceTree = "<group>"; };
+		AB7D8E7F193E92C30059EE63 /* stitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stitching.h; sourceTree = "<group>"; };
+		AB896A82193E8E830018B9EC /* SSVerticalPanorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSVerticalPanorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB896A86193E8E830018B9EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB896A87193E8E830018B9EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB896A89193E8E830018B9EC /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
+		AB896A8C193E8E830018B9EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SSStoryboard.storyboard; sourceTree = "<group>"; };
+		AB896A8E193E8E830018B9EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		E60B4E5828E1B48C0072FD39 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		E61132B028FFF9B700736A5A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E61132B228FFFAD300736A5A /* SSVerticalPanorama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SSVerticalPanorama.swift; sourceTree = "<group>"; };
+		E61C57B228FEC7280093F4ED /* Enumaration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumaration.swift; sourceTree = "<group>"; };
+		E61C57B628FFEDEA0093F4ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E65E4EA028F6EABC00ED1E12 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E674068028DC6BAA00D0A12D /* SSVerticalPanoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSVerticalPanoController.swift; sourceTree = "<group>"; };
+		E6B565F428E2EC4D00CFC699 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E6FBF35D291389EF00C576C1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F006D5544C7789B37714618A /* Pods-SSVerticalPanorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSVerticalPanorama.debug.xcconfig"; path = "Target Support Files/Pods-SSVerticalPanorama/Pods-SSVerticalPanorama.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB896A7F193E8E830018B9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0E5A98C292B26E2CAAA8D7D /* Pods_SSVerticalPanorama.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96EE46765FAA4198FDF79483 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F006D5544C7789B37714618A /* Pods-SSVerticalPanorama.debug.xcconfig */,
+				A43789EC0B5D2E48DA528636 /* Pods-SSVerticalPanorama.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB896A79193E8E830018B9EC = {
+			isa = PBXGroup;
+			children = (
+				AB6D1AEE193F9B6600F8B0F5 /* README.markdown */,
+				AB896A84193E8E830018B9EC /* SSVerticalPanorama */,
+				AB896A83193E8E830018B9EC /* Products */,
+				EE5F212F31B24F2C835C369D /* Frameworks */,
+				96EE46765FAA4198FDF79483 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		AB896A83193E8E830018B9EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB896A82193E8E830018B9EC /* SSVerticalPanorama.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB896A84193E8E830018B9EC /* SSVerticalPanorama */ = {
+			isa = PBXGroup;
+			children = (
+				E61C57B828FFF97F0093F4ED /* Demo */,
+				E6B565F328E2EAEA00CFC699 /* OpenCVClass */,
+				E674068028DC6BAA00D0A12D /* SSVerticalPanoController.swift */,
+				AB896A87193E8E830018B9EC /* AppDelegate.swift */,
+				AB896A89193E8E830018B9EC /* PreviewController.swift */,
+				AB896A8B193E8E830018B9EC /* SSStoryboard.storyboard */,
+				AB896A8E193E8E830018B9EC /* Images.xcassets */,
+				AB896A85193E8E830018B9EC /* Supporting Files */,
+				E60B4E5828E1B48C0072FD39 /* ImageViewExtension.swift */,
+				E6B565F428E2EC4D00CFC699 /* Constants.swift */,
+				E65E4EA028F6EABC00ED1E12 /* LaunchScreen.storyboard */,
+				E61C57B228FEC7280093F4ED /* Enumaration.swift */,
+				E61132B228FFFAD300736A5A /* SSVerticalPanorama.swift */,
+				E6FBF35D291389EF00C576C1 /* Localizable.strings */,
+			);
+			path = SSVerticalPanorama;
+			sourceTree = "<group>";
+		};
+		AB896A85193E8E830018B9EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB896A86193E8E830018B9EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E61C57B828FFF97F0093F4ED /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E61132B028FFF9B700736A5A /* Main.storyboard */,
+				E61C57B628FFEDEA0093F4ED /* ViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		E6B565F328E2EAEA00CFC699 /* OpenCVClass */ = {
+			isa = PBXGroup;
+			children = (
+				AB7D8E77193E928D0059EE63 /* SwiftStitch-Bridging-Header.h */,
+				AB7D8E7B193E92B80059EE63 /* CVWrapper.h */,
+				AB7D8E7C193E92B80059EE63 /* CVWrapper.mm */,
+				AB7D8E7E193E92C30059EE63 /* stitching.cpp */,
+				AB7D8E7F193E92C30059EE63 /* stitching.h */,
+				ABAA668B1BD420BE00BD6A45 /* UIImage+Rotate.h */,
+				ABAA668C1BD420BE00BD6A45 /* UIImage+Rotate.m */,
+				AB7D8E78193E928E0059EE63 /* UIImage+OpenCV.h */,
+				AB7D8E79193E928E0059EE63 /* UIImage+OpenCV.mm */,
+			);
+			path = OpenCVClass;
+			sourceTree = "<group>";
+		};
+		EE5F212F31B24F2C835C369D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98F1904BC8247496FFB99B6E /* Pods_SSVerticalPanorama.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB896A81193E8E830018B9EC /* SSVerticalPanorama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB896A9E193E8E830018B9EC /* Build configuration list for PBXNativeTarget "SSVerticalPanorama" */;
+			buildPhases = (
+				99571668961909572DE97DAF /* [CP] Check Pods Manifest.lock */,
+				AB896A7E193E8E830018B9EC /* Sources */,
+				AB896A7F193E8E830018B9EC /* Frameworks */,
+				AB896A80193E8E830018B9EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SSVerticalPanorama;
+			productName = SwiftStitch;
+			productReference = AB896A82193E8E830018B9EC /* SSVerticalPanorama.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB896A7A193E8E830018B9EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 1230;
+				ORGANIZATIONNAME = "Simform Solutions Pvt.";
+				TargetAttributes = {
+					AB896A81193E8E830018B9EC = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = K7XJG666ZW;
+						LastSwiftMigration = 1230;
+					};
+				};
+			};
+			buildConfigurationList = AB896A7D193E8E830018B9EC /* Build configuration list for PBXProject "SSVerticalPanorama" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB896A79193E8E830018B9EC;
+			productRefGroup = AB896A83193E8E830018B9EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB896A81193E8E830018B9EC /* SSVerticalPanorama */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AB896A80193E8E830018B9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6FBF35E291389EF00C576C1 /* Localizable.strings in Resources */,
+				E65E4EA128F6EABC00ED1E12 /* LaunchScreen.storyboard in Resources */,
+				E61132B128FFF9B700736A5A /* Main.storyboard in Resources */,
+				AB896A8D193E8E830018B9EC /* SSStoryboard.storyboard in Resources */,
+				AB896A8F193E8E830018B9EC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99571668961909572DE97DAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SSVerticalPanorama-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB896A7E193E8E830018B9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB896A8A193E8E830018B9EC /* PreviewController.swift in Sources */,
+				AB7D8E80193E92C30059EE63 /* stitching.cpp in Sources */,
+				ABAA668D1BD420BE00BD6A45 /* UIImage+Rotate.m in Sources */,
+				E61C57B328FEC7280093F4ED /* Enumaration.swift in Sources */,
+				E61C57B728FFEDEA0093F4ED /* ViewController.swift in Sources */,
+				AB7D8E7A193E928E0059EE63 /* UIImage+OpenCV.mm in Sources */,
+				AB7D8E7D193E92B80059EE63 /* CVWrapper.mm in Sources */,
+				AB896A88193E8E830018B9EC /* AppDelegate.swift in Sources */,
+				E60B4E5928E1B48C0072FD39 /* ImageViewExtension.swift in Sources */,
+				E674068128DC6BAA00D0A12D /* SSVerticalPanoController.swift in Sources */,
+				E61132B328FFFAD300736A5A /* SSVerticalPanorama.swift in Sources */,
+				E6B565F528E2EC4D00CFC699 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AB896A8B193E8E830018B9EC /* SSStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB896A8C193E8E830018B9EC /* Base */,
+			);
+			name = SSStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AB896A9C193E8E830018B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB896A9D193E8E830018B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB896A9F193E8E830018B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F006D5544C7789B37714618A /* Pods-SSVerticalPanorama.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = K7XJG666ZW;
+				ENABLE_BITCODE = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = SSVerticalPanorama/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSVerticalPanorama;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.0;
+				OTHER_CFLAGS = (
+					"-fvisibility=hidden",
+					"-fvisibility-inlines-hidden",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssverticalpano.camera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SSVerticalPanorama/OpenCVClass/SwiftStitch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AB896AA0193E8E830018B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A43789EC0B5D2E48DA528636 /* Pods-SSVerticalPanorama.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 2Y9BM25FS4;
+				ENABLE_BITCODE = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				INFOPLIST_FILE = SSVerticalPanorama/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SSVerticalPanorama;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.0;
+				OTHER_CFLAGS = (
+					"-fvisibility=hidden",
+					"-fvisibility-inlines-hidden",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ellipsis.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SSVerticalPanorama/OpenCVClass/SwiftStitch-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB896A7D193E8E830018B9EC /* Build configuration list for PBXProject "SSVerticalPanorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB896A9C193E8E830018B9EC /* Debug */,
+				AB896A9D193E8E830018B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB896A9E193E8E830018B9EC /* Build configuration list for PBXNativeTarget "SSVerticalPanorama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB896A9F193E8E830018B9EC /* Debug */,
+				AB896AA0193E8E830018B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB896A7A193E8E830018B9EC /* Project object */;
+}
