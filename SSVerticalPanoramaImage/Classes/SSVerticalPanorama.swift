@@ -13,6 +13,13 @@ public class SSVerticalPanorama {
     
     public var delegate: SSVerticalPanoDelegate?
     public var showPreviewScreen: Bool = true
+    public var closeImage: UIImage? = nil
+    public var flashImage: UIImage? = nil
+    public var zoomInImage: UIImage? = nil
+    public var zoomOutImage: UIImage? = nil
+    public var startCameraImage: UIImage? = nil
+    public var stopCameraImage: UIImage? = nil
+    public var arrowImage: UIImage? = nil
     
     public init() {
         
@@ -27,10 +34,19 @@ public class SSVerticalPanorama {
                     guard let self else { return }
                     let bundle = Bundle(for: Self.self)
                     let storyboard = UIStoryboard(name: StoryBoradEnum.ssStoryBoard.rawValue, bundle: bundle)
-                    guard let ssCustomeCameraVC = storyboard.instantiateViewController(withIdentifier: ViewContrllerEnum.ssVerticalPanoController.rawValue) as? SSVerticalPanoController else {return}
-                    ssCustomeCameraVC.delegate = self.delegate
-                    ssCustomeCameraVC.showPreviewScreen = self.showPreviewScreen
-                    navController.pushViewController(ssCustomeCameraVC, animated: true)
+                    guard let ssCustomCameraVC = storyboard.instantiateViewController(withIdentifier: ViewContrllerEnum.ssVerticalPanoController.rawValue) as? SSVerticalPanoController else {return}
+                    ssCustomCameraVC.delegate = self.delegate
+                    ssCustomCameraVC.showPreviewScreen = self.showPreviewScreen
+                    
+                    ssCustomCameraVC.closeImage = self.closeImage
+                    ssCustomCameraVC.flashImage = self.flashImage
+                    ssCustomCameraVC.zoomInImage = self.zoomInImage
+                    ssCustomCameraVC.zoomOutImage = self.zoomOutImage
+                    ssCustomCameraVC.startCameraImage = self.startCameraImage
+                    ssCustomCameraVC.stopCameraImage = self.stopCameraImage
+                    ssCustomCameraVC.arrowImage = self.arrowImage
+                    
+                    navController.pushViewController(ssCustomCameraVC, animated: true)
                 }
                
             } else {
