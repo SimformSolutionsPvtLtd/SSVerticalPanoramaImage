@@ -69,6 +69,15 @@ class SSVerticalPanoController: UIViewController {
     var delegate: SSVerticalPanoDelegate?
     var showPreviewScreen: Bool = true
     
+    // Customize icons
+    var closeImage: UIImage? = nil
+    var flashImage: UIImage? = nil
+    var zoomInImage: UIImage? = nil
+    var zoomOutImage: UIImage? = nil
+    var startCameraImage: UIImage? = nil
+    var stopCameraImage: UIImage? = nil
+    var arrowImage: UIImage? = nil
+    
     //MARK: - ViewLife Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +100,29 @@ extension SSVerticalPanoController {
         lblInstruction.numberOfLines = .zero
         self.lblInstruction.text = InstructionEnum.stablePosition.rawValue
         imagePreview.transform = CGAffineTransform(rotationAngle: .pi / 2)
+        
+        if let closeImage {
+            buttonClose.setImage(closeImage, for: .normal)
+        }
+        if let flashImage {
+            buttonsFlash.setImage(flashImage, for: .normal)
+        }
+        if let zoomInImage {
+            buttonZoomIn.setImage(zoomInImage, for: .normal)
+        }
+        if let zoomOutImage {
+            buttonZoomOut.setImage(zoomOutImage, for: .normal)
+        }
+        if let startCameraImage {
+            cameraButton.setImage(startCameraImage, for: .normal)
+        }
+        if let stopCameraImage {
+            cameraButton.setImage(stopCameraImage, for: .selected)
+        }
+        if let arrowImage {
+            imageArrow.image = arrowImage
+        }
+        
     }
 }
 
