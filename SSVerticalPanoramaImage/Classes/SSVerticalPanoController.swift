@@ -42,8 +42,8 @@ class SSVerticalPanoController: UIViewController {
     @IBOutlet weak var constraintPreviewTop: NSLayoutConstraint!
     
     //MARK: - Variables
-    private var currentDevice: AVCaptureDevice!
-    private var avCameraImageOutput: AVCapturePhotoOutput!
+    private var currentDevice: AVCaptureDevice? = nil
+    private var avCameraImageOutput: AVCapturePhotoOutput? = nil
     private var avCameraImageArray: [UIImage] = []
     private var motionManager: CMMotionManager?
     private var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
@@ -156,17 +156,20 @@ extension SSVerticalPanoController {
     }
     
     @IBAction func onClickOfFlash(_ sender: UIButton) {
+        guard let currentDevice else { return }
         currentDevice.torchMode = currentDevice.torchMode == .on ? .off : .on
         buttonsFlash.setImage(UIImage(named: currentDevice.torchMode == .on ? ImageEnum.flashOn.rawValue : ImageEnum.flashOf.rawValue), for: .normal)
     }
     
     @IBAction func onClickOfZoomIn(_ sender: UIButton) {
+        guard let currentDevice else { return }
         currentDevice.videoZoomFactor += Constants.zoomFactor
         buttonZoomOut.isEnabled = true
         buttonZoomIn.isEnabled = currentDevice.videoZoomFactor != Constants.maxZoomFactor
     }
     
     @IBAction func onClickZoomOut(_ sender: UIButton) {
+        guard let currentDevice else { return }
         if (currentDevice.videoZoomFactor > Constants.zoomFactor) {
             currentDevice.videoZoomFactor -= Constants.zoomFactor
         }
@@ -189,6 +192,7 @@ extension SSVerticalPanoController {
                 currentDevice = device
             }
         }
+        guard let currentDevice else { return }
         do {
             try currentDevice.lockForConfiguration()
         } catch {
@@ -208,7 +212,9 @@ extension SSVerticalPanoController {
         videoOutput.setSampleBufferDelegate(self, queue: dataOutputQueue)
         // Provide a camera preview
         cameraPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        view.layer.addSublayer(cameraPreviewLayer!)
+        if let cameraPreviewLayer {
+            view.layer.addSublayer(cameraPreviewLayer)
+        }
         cameraPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         cameraPreviewLayer?.frame = viewCamera.frame
         bringViewsFront()
@@ -227,9 +233,11 @@ extension SSVerticalPanoController {
         motionManager?.startDeviceMotionUpdates()
         if let motionManager = motionManager {
             motionManager.deviceMotionUpdateInterval = Constants.timeInterval
-            motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (deviceMotion, deviceMotionError) in
-                if (self.isCameraStarted) {
-                    self.handleDeviceMotionUpdates(deviceMotion!)
+            if let operationQueue = OperationQueue.current {
+                motionManager.startDeviceMotionUpdates(to: operationQueue) { (deviceMotion, deviceMotionError) in
+                    if (self.isCameraStarted) {
+                        self.handleDeviceMotionUpdates(deviceMotion!)
+                    }
                 }
             }
         }
@@ -427,9 +435,11 @@ extension SSVerticalPanoController {
     // Convert CIImage to UIImage
     func convertAndUpdateUI(cmage: CIImage) -> UIImage {
         let context = CIContext(options: nil)
-        let cgImage = context.createCGImage(cmage, from: cmage.extent)!
-        let image = UIImage(cgImage: cgImage)
-        return image
+        let cgImage = context.createCGImage(cmage, from: cmage.extent)
+        if let cgImage {
+            return UIImage(cgImage: cgImage)
+        }
+        return UIImage()
     }
     
 }
