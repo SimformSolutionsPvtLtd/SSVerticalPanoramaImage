@@ -17,7 +17,7 @@ struct Constants {
     static let tenDouble = 10.0
     static let thousand = 10000.0
     static let timeInterval = 0.01
-    static let minRequierdImage = 3
+    static let minRequiredImage = 3
     static let initialArrowDistance = 100.0
     static let initialVerticalDistance = 100.0
     static let gravityConstant = 9.81
@@ -35,5 +35,5 @@ struct Constants {
     static let imageCaptureRate = 20.0
     static let distanceErorConstant = 20.0
     static let verticalCaptureDistance = 1000.0
-    static let videoLable = "video data queue"
+    static let videoLabel = "video data queue"
 }

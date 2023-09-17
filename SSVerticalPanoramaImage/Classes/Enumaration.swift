@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum StoryBoradEnum: String {
+enum StoryBoardEnum: String {
     case ssStoryBoard = "SSStoryboard"
 }
 
-enum ViewContrllerEnum: String {
+enum ViewControllerEnum: String {
     case previewController = "previewController"
     case ssVerticalPanoController = "sSVerticalPanoController"
 }
