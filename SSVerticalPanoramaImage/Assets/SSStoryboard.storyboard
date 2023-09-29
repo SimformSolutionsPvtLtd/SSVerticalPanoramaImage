@@ -38,7 +38,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
-                                    <action selector="onClickOfCross:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ozf-Ml-9hl"/>
+                                    <action selector="onClickOfRetake:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ozf-Ml-9hl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="Zzw-wS-iCP" userLabel="DoneButton">
@@ -97,7 +97,7 @@
                     <connections>
                         <outlet property="buttonDone" destination="Zzw-wS-iCP" id="WyM-Ar-qPF"/>
                         <outlet property="buttonRetake" destination="ggY-UN-adO" id="ScW-lA-mdb"/>
-                        <outlet property="imageViewnewOutlet" destination="kyc-Og-0s1" id="tqU-ya-JSX"/>
+                        <outlet property="imageViewOutlet" destination="kyc-Og-0s1" id="tqU-ya-JSX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -286,12 +286,12 @@
                     <connections>
                         <outlet property="activityIndicator" destination="cqV-KJ-lHf" id="eCI-lV-Qxa"/>
                         <outlet property="buttonClose" destination="eyX-bR-yia" id="Thf-dd-He9"/>
+                        <outlet property="buttonTakePhoto" destination="0kG-Dh-MDb" id="3C9-KL-7D0"/>
                         <outlet property="buttonZoomIn" destination="0ex-Gt-ff6" id="ogk-E9-VrI"/>
                         <outlet property="buttonZoomOut" destination="smF-Sv-jY5" id="uwZ-dh-KQa"/>
                         <outlet property="buttonsFlash" destination="16e-Fh-F6T" id="DLG-eX-k0F"/>
-                        <outlet property="cameraButton" destination="0kG-Dh-MDb" id="3C9-KL-7D0"/>
                         <outlet property="constraintArrowTop" destination="S3G-VH-Hha" id="PFC-QY-Y4d"/>
-                        <outlet property="constraintArrowXAllign" destination="cvf-8S-B7K" id="Jrj-u7-ek4"/>
+                        <outlet property="constraintArrowXAlign" destination="cvf-8S-B7K" id="Jrj-u7-ek4"/>
                         <outlet property="constraintPreviewBottom" destination="P0q-R3-dqf" id="y4G-Ra-Sep"/>
                         <outlet property="constraintPreviewTop" destination="ZlX-GM-uHV" id="MLL-3G-N83"/>
                         <outlet property="imageArrow" destination="e9T-ZJ-W9M" id="t27-98-J6H"/>

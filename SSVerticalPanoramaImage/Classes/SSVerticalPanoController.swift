@@ -22,11 +22,11 @@ public protocol SSVerticalPanoDelegate {
 class SSVerticalPanoController: UIViewController {
     
     //MARK: - Outlets
-    @IBOutlet var cameraButton:UIButton!
+    @IBOutlet weak var buttonTakePhoto:UIButton!
     @IBOutlet weak var viewCenter: UIView!
     @IBOutlet weak var viewCenterLine: UIView!
     @IBOutlet weak var imageArrow: UIImageView!
-    @IBOutlet weak var constraintArrowXAllign: NSLayoutConstraint!
+    @IBOutlet weak var constraintArrowXAlign: NSLayoutConstraint!
     @IBOutlet weak var constraintArrowTop: NSLayoutConstraint!
     @IBOutlet weak var viewCamera: UIView!
     @IBOutlet weak var imagePreview: UIImageView!
@@ -52,7 +52,7 @@ class SSVerticalPanoController: UIViewController {
     private var isCameraStarted = false
     private var needToTakeImage = true
     private var horizontalDistance = Constants.zeroDouble
-    private var stichingTask: Task<(), Never>?
+    private var stitchingTask: Task<(), Never>?
     private var finalImage: UIImage? = nil
     private var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
     private var arrayOfSpeed: [Double] = []
@@ -114,10 +114,10 @@ extension SSVerticalPanoController {
             buttonZoomOut.setImage(zoomOutImage, for: .normal)
         }
         if let startCameraImage {
-            cameraButton.setImage(startCameraImage, for: .normal)
+            buttonTakePhoto.setImage(startCameraImage, for: .normal)
         }
         if let stopCameraImage {
-            cameraButton.setImage(stopCameraImage, for: .selected)
+            buttonTakePhoto.setImage(stopCameraImage, for: .selected)
         }
         if let arrowImage {
             imageArrow.image = arrowImage
@@ -130,8 +130,8 @@ extension SSVerticalPanoController {
 extension SSVerticalPanoController {
     
     @IBAction func onClickOfCamera(sender: UIButton) {
-        UIView.transition(with: sender,duration: Constants.halfDouble, options: .transitionFlipFromTop, animations: {
-            self.cameraButton.isSelected = !sender.isSelected
+        UIView.transition(with: sender, duration: Constants.halfDouble, options: .transitionFlipFromTop, animations: {
+            self.buttonTakePhoto.isSelected = !sender.isSelected
         },completion: nil)
         isCameraStarted = sender.isSelected
         if (sender.isSelected) {
@@ -143,7 +143,7 @@ extension SSVerticalPanoController {
             motionaObserver()
         } else {
             motionManager?.stopDeviceMotionUpdates()
-            if (avCameraImageArray.count > Constants.minRequierdImage) {
+            if (avCameraImageArray.count > Constants.minRequiredImage) {
                 joinImages()
             } else {
                 resetCamera()
@@ -205,7 +205,7 @@ extension SSVerticalPanoController {
             return
         }
         let videoOutput = AVCaptureVideoDataOutput()
-        let dataOutputQueue = DispatchQueue(label: Constants.videoLable,
+        let dataOutputQueue = DispatchQueue(label: Constants.videoLabel,
                                             qos: .userInitiated,
                                             attributes: [],
                                             autoreleaseFrequency: .workItem)
@@ -249,7 +249,6 @@ extension SSVerticalPanoController {
         if (verticalArrowDistance - partialCapturedDistance > (Constants.imageCaptureRate)) {
             partialCapturedDistance = verticalArrowDistance
             needToTakeImage = true
-            debugPrint("Clicked")
         }
         if (verticalArrowDistance > (viewCenter.bounds.height - Constants.arrowHeight)) {
             isCameraStarted = false
@@ -262,7 +261,7 @@ extension SSVerticalPanoController {
     
     func updateHorizontalDistance(deviceMotion: CMDeviceMotion) {
         horizontalDistance += (getRoundedData(distance: deviceMotion.rotationRate.y)) / Constants.horizontalRotationConstant
-        constraintArrowXAllign.constant = horizontalDistance
+        constraintArrowXAlign.constant = horizontalDistance
         if (horizontalDistance > Constants.maxHorizontalDistance) {
             lblInstruction.text = InstructionEnum.moveLeft.rawValue
         } else if (horizontalDistance < -Constants.maxHorizontalDistance) {
@@ -294,9 +293,7 @@ extension SSVerticalPanoController {
         let distanceRotation = getRoundedData(distance: abs(deviceMotion.rotationRate.x))
         if (distanceForTimeFrame < Constants.leanerRotationFactor) {
             distanceForTimeFrame += (distanceForTimeFrame - error) * Constants.distanceErorConstant
-            debugPrint("accelaration")
         } else {
-            debugPrint("rotation")
             distanceForTimeFrame = distanceRotation * Constants.tenDouble
         }
         if (distanceForTimeFrame >= Constants.minMovementDistance) {
@@ -319,9 +316,6 @@ extension SSVerticalPanoController {
             guard let uSelf = self else { return }
             // This is run on a background queue
             uSelf.captureSession.startRunning()
-            DispatchQueue.main.async {
-                // This is run on the main queue, after the previous code in outer block
-            }
         }
     }
     
@@ -332,7 +326,7 @@ extension SSVerticalPanoController {
     
     func bringViewsFront() {
         // Bring the view to front
-        view.bringSubviewToFront(cameraButton)
+        view.bringSubviewToFront(buttonTakePhoto)
         view.bringSubviewToFront(viewCenter)
         view.bringSubviewToFront(viewCenterLine)
         view.bringSubviewToFront(imageArrow)
@@ -353,17 +347,17 @@ extension SSVerticalPanoController {
 extension SSVerticalPanoController {
     
     func resetCamera() {
-        self.stichingTask?.cancel()
+        self.stitchingTask?.cancel()
         self.avCameraImageArray = []
         self.motionManager?.stopDeviceMotionUpdates()
-        self.cameraButton.isSelected = false
+        self.buttonTakePhoto.isSelected = false
         self.isCameraStarted = false
         self.needToTakeImage = true
         self.verticalArrowDistance = Constants.initialVerticalDistance
         self.partialCapturedDistance = Constants.zeroDouble
         self.horizontalDistance = Constants.zeroDouble
         self.verticalArrowDistance = Constants.initialArrowDistance
-        self.constraintArrowXAllign.constant = Constants.zeroDouble
+        self.constraintArrowXAlign.constant = Constants.zeroDouble
         self.finalImage = nil
         self.lblInstruction.text = InstructionEnum.stablePosition.rawValue
         self.arrayOfSpeed = []
@@ -371,7 +365,7 @@ extension SSVerticalPanoController {
     }
     
     func resetIfNotAlignCamera() {
-        if (verticalArrowDistance < -(Constants.tenDouble)  || constraintArrowXAllign.constant > (viewCenter.bounds.width / Constants.two) + Constants.tenDouble || -(constraintArrowXAllign.constant) > (viewCenter.bounds.width / Constants.two) + Constants.tenDouble) {
+        if (verticalArrowDistance < -(Constants.tenDouble)  || constraintArrowXAlign.constant > (viewCenter.bounds.width / Constants.two) + Constants.tenDouble || -(constraintArrowXAlign.constant) > (viewCenter.bounds.width / Constants.two) + Constants.tenDouble) {
             resetCamera()
         }
     }
@@ -398,17 +392,16 @@ extension SSVerticalPanoController: AVCaptureVideoDataOutputSampleBufferDelegate
         
         if (needToTakeImage && isCameraStarted) {
             if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-                let image = self.convertAndUpdateUI(cmage: CIImage(cvPixelBuffer: imageBuffer))
+                let image = self.convertAndUpdateUI(ciImage: CIImage(cvPixelBuffer: imageBuffer))
                 DispatchQueue.main.async {
                     self.imagePreview?.image = image
                 }
                 self.avCameraImageArray.append(image)
                 self.needToTakeImage = false
-                debugPrint("Taken Photo")
             }
         } else if (!isCameraStarted) {
             if let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-                let image = self.convertAndUpdateUI(cmage: CIImage(cvPixelBuffer: imageBuffer))
+                let image = self.convertAndUpdateUI(ciImage: CIImage(cvPixelBuffer: imageBuffer))
                 DispatchQueue.main.async {
                     self.imagePreview?.image = image
                 }
@@ -433,26 +426,24 @@ extension SSVerticalPanoController {
     }
     
     // Convert CIImage to UIImage
-    func convertAndUpdateUI(cmage: CIImage) -> UIImage {
+    func convertAndUpdateUI(ciImage: CIImage) -> UIImage {
         let context = CIContext(options: nil)
-        let cgImage = context.createCGImage(cmage, from: cmage.extent)
-        if let cgImage {
-            return UIImage(cgImage: cgImage)
-        }
-        return UIImage()
+        let cgImage = context.createCGImage(ciImage, from: ciImage.extent)!
+        let image = UIImage(cgImage: cgImage)
+        return image
     }
     
 }
 
-//MARK: - stichingComplete
+//MARK: - stitchingComplete
 extension SSVerticalPanoController {
     
-    func stichingComplete() {
+    func stitchingComplete() {
         showPreviewScreen ? openPreviewImage() : onClickOfDoneImage(image: finalImage ?? UIImage())
     }
     
     private func openPreviewImage() {
-        guard let previewController = UIStoryboard(name: StoryBoradEnum.ssStoryBoard.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewContrllerEnum.previewController.rawValue) as? PreviewController, let finalImage = finalImage else {return}
+        guard let previewController = UIStoryboard(name: StoryBoardEnum.ssStoryBoard.rawValue, bundle: nil).instantiateViewController(withIdentifier: ViewControllerEnum.previewController.rawValue) as? PreviewController, let finalImage = finalImage else {return}
         previewController.finalImage = finalImage
         previewController.delegate = self
         navigationController?.pushViewController(previewController, animated: true)
@@ -460,7 +451,7 @@ extension SSVerticalPanoController {
     
 }
 
-//MARK: - Stiching
+//MARK: - Stitching
 extension SSVerticalPanoController {
     
     func stitched(imageArray: [UIImage]) async throws -> UIImage {
@@ -470,21 +461,21 @@ extension SSVerticalPanoController {
     
     func joinImages() {
         showProgressBar(show: true)
-        if (stichingTask?.isCancelled ?? true) {
-            stichingTask = Task {
+        if (stitchingTask?.isCancelled ?? true) {
+            stitchingTask = Task {
                 do {
                     finalImage = try await stitched(imageArray: avCameraImageArray)
                     finalImage = finalImage?.rotate(radians: (.pi / Float(Constants.two)))
-                    //Stiching Completed
+                    //Stitching Completed
                     showProgressBar(show: false)
                     if (finalImage != nil) {
-                        stichingComplete()
+                        stitchingComplete()
                     } else {
                         resetCamera()
                     }
                 } catch let error as NSError {
                     debugPrint("Faild stiching \(error.localizedDescription)")
-                    stichingTask?.cancel()
+                    stitchingTask?.cancel()
                     resetCamera()
                     captureSession.startRunning()
                 }
@@ -502,7 +493,7 @@ extension SSVerticalPanoController {
         self.viewCamera.isHidden = show
         self.viewCenter.isHidden = show
         self.viewCenterLine.isHidden = show
-        self.cameraButton.isHidden = show
+        self.buttonTakePhoto.isHidden = show
         self.viewCamera.isHidden = show
         self.imageArrow.isHidden = show
         self.imagePreview.isHidden = show

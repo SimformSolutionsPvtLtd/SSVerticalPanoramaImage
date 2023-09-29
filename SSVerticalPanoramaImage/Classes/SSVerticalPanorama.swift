@@ -33,8 +33,8 @@ public class SSVerticalPanorama {
                 DispatchQueue.main.async { [weak self] in
                     guard let self else { return }
                     let bundle = Bundle(for: Self.self)
-                    let storyboard = UIStoryboard(name: StoryBoradEnum.ssStoryBoard.rawValue, bundle: bundle)
-                    guard let ssCustomCameraVC = storyboard.instantiateViewController(withIdentifier: ViewContrllerEnum.ssVerticalPanoController.rawValue) as? SSVerticalPanoController else {return}
+                    let storyboard = UIStoryboard(name: StoryBoardEnum.ssStoryBoard.rawValue, bundle: bundle)
+                    guard let ssCustomCameraVC = storyboard.instantiateViewController(withIdentifier: ViewControllerEnum.ssVerticalPanoController.rawValue) as? SSVerticalPanoController else {return}
                     ssCustomCameraVC.delegate = self.delegate
                     ssCustomCameraVC.showPreviewScreen = self.showPreviewScreen
                     

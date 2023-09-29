@@ -11,7 +11,7 @@ import UIKit
 class PreviewController: UIViewController, UIScrollViewDelegate {
     
     //MARK: - Outlets
-    @IBOutlet weak var imageViewnewOutlet: UIImageView!
+    @IBOutlet weak var imageViewOutlet: UIImageView!
     @IBOutlet weak var buttonRetake: UIButton!
     @IBOutlet weak var buttonDone: UIButton!
     
@@ -25,7 +25,7 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
         self.navigationController?.isNavigationBarHidden = true
         view.bringSubviewToFront(buttonDone)
         view.bringSubviewToFront(buttonRetake)
-        imageViewnewOutlet.image = finalImage
+        imageViewOutlet.image = finalImage
     }
         
 }
@@ -33,7 +33,7 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
 //MARK: - Action Outlet
 extension PreviewController {
     
-    @IBAction func onClickOfCross(_ sender: UIButton) {
+    @IBAction func onClickOfRetake(_ sender: UIButton) {
         delegate?.onClickOfRetake()
         self.navigationController?.popViewController(animated: false)
     }

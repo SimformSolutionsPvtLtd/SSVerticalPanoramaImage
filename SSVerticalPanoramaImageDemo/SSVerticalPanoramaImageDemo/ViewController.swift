@@ -33,7 +33,6 @@ extension ViewController {
         guard let navController = navigationController, let verticalPano else { return }
         verticalPano.delegate = self
         verticalPano.showPreviewScreen = true
-        verticalPano.closeImage = UIImage(named: "close_red_icon")
         verticalPano.openSSVerticalPanoramaCam(navController: navController)
     }
     
