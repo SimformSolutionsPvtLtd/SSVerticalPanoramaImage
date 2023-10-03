@@ -13,6 +13,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		E6BC98312ACC75B70079652B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6BC98302ACC75B70079652B /* Color.xcassets */; };
+		E6BC98332ACC785D0079652B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6BC98322ACC785D0079652B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		99D97DC94B4D27A84294A615 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		A59B1D21CC581B5D950E76F1 /* Pods_SSVerticalPanoramaKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSVerticalPanoramaKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D777216B9D8E3728AF460360 /* Pods_SSVerticalPanoramaImageDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSVerticalPanoramaImageDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BC98302ACC75B70079652B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		E6BC98322ACC785D0079652B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E6F2DFC42A51DDE90003E156 /* SSVerticalPanoramaImage.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = SSVerticalPanoramaImage.podspec; path = ../SSVerticalPanoramaImage.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -79,8 +83,10 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				E6BC98302ACC75B70079652B /* Color.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				E6BC98322ACC785D0079652B /* Constants.swift */,
 			);
 			path = SSVerticalPanoramaImageDemo;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				E6BC98312ACC75B70079652B /* Color.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -262,6 +269,7 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				E6BC98332ACC785D0079652B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

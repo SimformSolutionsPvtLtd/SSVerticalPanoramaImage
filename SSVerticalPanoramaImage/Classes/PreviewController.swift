@@ -22,12 +22,18 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = true
         view.bringSubviewToFront(buttonDone)
         view.bringSubviewToFront(buttonRetake)
         imageViewOutlet.image = finalImage
     }
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
 }
 
 //MARK: - Action Outlet
