@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -415,6 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = SSVerticalPanoramaImageDemo;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssverticalpano.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = SSVerticalPanoramaImageDemo;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ssverticalpano.camera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
