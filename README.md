@@ -118,10 +118,10 @@ Distributed under the MIT license. See [LICENSE][license-url] for more informati
 
    [git-repo-url]:                              <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage.git>
    [stargazers]:                                <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage/stargazers>
-   [Contributing Guide]:                        <https://github.com/mobile-simformsolutions/SSVerticalPanoramaImage/blob/main/CONTRIBUTING.md>
+   [Contributing Guide]:                        <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage/blob/master/CONTRIBUTING.md>
    [GitHub Issues]:                             <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage/issues>
    [swift-url]: <https://swift.org/>
 [cocoapods-link]:                            <https://cocoapods.org/>
    [license-image]:                             <https://img.shields.io/badge/License-MIT-blue.svg>
-   [license-url]: <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage/blob/main/LICENSE>
+   [license-url]: <https://github.com/SimformSolutionsPvtLtd/SSVerticalPanoramaImage/blob/master/LICENSE>
    [Awesome-Mobile-Libraries]:                    <https://github.com/SimformSolutionsPvtLtd/Awesome-Mobile-Libraries>
